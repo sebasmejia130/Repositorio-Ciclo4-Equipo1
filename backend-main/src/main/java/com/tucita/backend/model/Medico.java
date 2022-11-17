@@ -1,35 +1,37 @@
 package com.tucita.backend.model;
 
 import java.util.Objects;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("medicos")
-public class Medico {
+@Document("medic")
+public class MedicoGeneral {
+	
 	@Id
 	private Long id;
-	private String nombres;
-	private String primerApellido;
-	private String segundoApellido;
-	private String area;
-	private Byte genero;
-	private Long telefono;
-	private String correo;
-	private Usuario usuario;
-
-	public Medico(Long id, String nombres, String primerApellido, String segundoApellido, String area, Byte genero,
-			Long telefono, String correo, Usuario usuario) {
+	private String nombreMedico;
+	private String apellidoPaternoMedico;
+	private String apellidoMaternoMedico;
+	private Long telefonoMedico;
+	private String areaMedico;
+	private String usuarioMedico;
+	private String contraseñaMedico;
+	
+	public MedicoGeneral(Long id, String nombreMedico, String apellidoPaternoMedico, String apellidoMaternoMedico,
+			Long telefonoMedico, String areaMedico, String usuarioMedico, String contraseñaMedico) {
 		super();
 		this.id = id;
-		this.nombres = nombres;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.area = area;
-		this.genero = genero;
-		this.telefono = telefono;
-		this.correo = correo;
-		this.usuario = usuario;
+		this.nombreMedico = nombreMedico;
+		this.apellidoPaternoMedico = apellidoPaternoMedico;
+		this.apellidoMaternoMedico = apellidoMaternoMedico;
+		this.telefonoMedico = telefonoMedico;
+		this.areaMedico = areaMedico;
+		this.usuarioMedico = usuarioMedico;
+		this.contraseñaMedico = contraseñaMedico;
+	}
+
+	public MedicoGeneral() {
+		super();
 	}
 
 	public Long getId() {
@@ -40,73 +42,66 @@ public class Medico {
 		this.id = id;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public String getNombreMedico() {
+		return nombreMedico;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombreMedico(String nombreMedico) {
+		this.nombreMedico = nombreMedico;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getApellidoPaternoMedico() {
+		return apellidoPaternoMedico;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setApellidoPaternoMedico(String apellidoPaternoMedico) {
+		this.apellidoPaternoMedico = apellidoPaternoMedico;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getApellidoMaternoMedico() {
+		return apellidoMaternoMedico;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setApellidoMaternoMedico(String apellidoMaternoMedico) {
+		this.apellidoMaternoMedico = apellidoMaternoMedico;
 	}
 
-	public String getArea() {
-		return area;
+	public Long getTelefonoMedico() {
+		return telefonoMedico;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
+	public void setTelefonoMedico(Long telefonoMedico) {
+		this.telefonoMedico = telefonoMedico;
 	}
 
-	public Byte getGenero() {
-		return genero;
+	public String getAreaMedico() {
+		return areaMedico;
 	}
 
-	public void setGenero(Byte genero) {
-		this.genero = genero;
+	public void setAreaMedico(String areaMedico) {
+		this.areaMedico = areaMedico;
 	}
 
-	public Long getTelefono() {
-		return telefono;
+	public String getUsuarioMedico() {
+		return usuarioMedico;
 	}
 
-	public void setTelefono(Long telefono) {
-		this.telefono = telefono;
+	public void setUsuarioMedico(String usuarioMedico) {
+		this.usuarioMedico = usuarioMedico;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public String getContraseñaMedico() {
+		return contraseñaMedico;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setContraseñaMedico(String contraseñaMedico) {
+		this.contraseñaMedico = contraseñaMedico;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(area, correo, genero, id, nombres, primerApellido, segundoApellido, telefono, usuario);
+		return Objects.hash(apellidoMaternoMedico, apellidoPaternoMedico, areaMedico, contraseñaMedico, id,
+				nombreMedico, telefonoMedico, usuarioMedico);
 	}
 
 	@Override
@@ -117,18 +112,21 @@ public class Medico {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Medico other = (Medico) obj;
-		return Objects.equals(area, other.area) && Objects.equals(correo, other.correo)
-				&& Objects.equals(genero, other.genero) && Objects.equals(id, other.id)
-				&& Objects.equals(nombres, other.nombres) && Objects.equals(primerApellido, other.primerApellido)
-				&& Objects.equals(segundoApellido, other.segundoApellido) && Objects.equals(telefono, other.telefono)
-				&& Objects.equals(usuario, other.usuario);
+		MedicoGeneral other = (MedicoGeneral) obj;
+		return Objects.equals(apellidoMaternoMedico, other.apellidoMaternoMedico)
+				&& Objects.equals(apellidoPaternoMedico, other.apellidoPaternoMedico)
+				&& Objects.equals(areaMedico, other.areaMedico)
+				&& Objects.equals(contraseñaMedico, other.contraseñaMedico) && Objects.equals(id, other.id)
+				&& Objects.equals(nombreMedico, other.nombreMedico)
+				&& Objects.equals(telefonoMedico, other.telefonoMedico)
+				&& Objects.equals(usuarioMedico, other.usuarioMedico);
 	}
 
 	@Override
 	public String toString() {
-		return "Medico [id=" + id + ", nombres=" + nombres + ", primerApellido=" + primerApellido + ", segundoApellido="
-				+ segundoApellido + ", area=" + area + ", genero=" + genero + ", telefono=" + telefono + ", correo="
-				+ correo + ", usuario=" + usuario + "]";
+		return "MedicoGeneral [id=" + id + ", nombreMedico=" + nombreMedico + ", apellidoPaternoMedico="
+				+ apellidoPaternoMedico + ", apellidoMaternoMedico=" + apellidoMaternoMedico + ", telefonoMedico="
+				+ telefonoMedico + ", areaMedico=" + areaMedico + ", usuarioMedico="
+				+ usuarioMedico + ", contraseñaMedico=" + contraseñaMedico + "]";
 	}
 }

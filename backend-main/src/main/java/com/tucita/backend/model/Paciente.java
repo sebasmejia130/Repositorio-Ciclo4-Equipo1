@@ -5,31 +5,46 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("pacientes")
+@Document("patient")
 public class Paciente {
+	
 	@Id
 	private Long id;
-	private String nombres;
-	private String primerApellido;
-	private String segundoApellido;
-	private Byte genero;
-	private Long edad;
-	private Long telefono;
-	private String correo;
-	private Usuario usuario;
-
-	public Paciente(Long id, String nombres, String primerApellido, String segundoApellido, Byte genero, Long edad,
-			Long telefono, String correo, Usuario usuario) {
+	private String nombrePaciente;
+	private String apellidoPaternoPaciente;
+	private String apellidoMaternoPaciente;
+	private Long telefonoPaciente;
+	private String emailPaciente;
+	private String fechaNacimientoPaciente;
+	private String generoPaciente;
+	private String ciudadResidenciaPaciente;
+	private String direccionResidenciaPaciente;
+	private Long codigoAfiliacionPaciente;
+	private String usuarioPaciente;
+	private String contraseñaPaciente;
+	
+	public Paciente(Long id, String nombrePaciente, String apellidoPaternoPaciente, String apellidoMaternoPaciente,
+			Long telefonoPaciente, String emailPaciente, String fechaNacimientoPaciente, String generoPaciente,
+			String ciudadResidenciaPaciente, String direccionResidenciaPaciente, Long codigoAfiliacionPaciente,
+			String usuarioPaciente, String contraseñaPaciente) {
 		super();
 		this.id = id;
-		this.nombres = nombres;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.genero = genero;
-		this.edad = edad;
-		this.telefono = telefono;
-		this.correo = correo;
-		this.usuario = usuario;
+		this.nombrePaciente = nombrePaciente;
+		this.apellidoPaternoPaciente = apellidoPaternoPaciente;
+		this.apellidoMaternoPaciente = apellidoMaternoPaciente;
+		this.telefonoPaciente = telefonoPaciente;
+		this.emailPaciente = emailPaciente;
+		this.fechaNacimientoPaciente = fechaNacimientoPaciente;
+		this.generoPaciente = generoPaciente;
+		this.ciudadResidenciaPaciente = ciudadResidenciaPaciente;
+		this.direccionResidenciaPaciente = direccionResidenciaPaciente;
+		this.codigoAfiliacionPaciente = codigoAfiliacionPaciente;
+		this.usuarioPaciente = usuarioPaciente;
+		this.contraseñaPaciente = contraseñaPaciente;
+	}
+
+	public Paciente() {
+		super();
 	}
 
 	public Long getId() {
@@ -40,73 +55,107 @@ public class Paciente {
 		this.id = id;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public String getNombrePaciente() {
+		return nombrePaciente;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombrePaciente(String nombrePaciente) {
+		this.nombrePaciente = nombrePaciente;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getApellidoPaternoPaciente() {
+		return apellidoPaternoPaciente;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setApellidoPaternoPaciente(String apellidoPaternoPaciente) {
+		this.apellidoPaternoPaciente = apellidoPaternoPaciente;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getApellidoMaternoPaciente() {
+		return apellidoMaternoPaciente;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setApellidoMaternoPaciente(String apellidoMaternoPaciente) {
+		this.apellidoMaternoPaciente = apellidoMaternoPaciente;
 	}
 
-	public Byte getGenero() {
-		return genero;
+	public Long getTelefonoPaciente() {
+		return telefonoPaciente;
 	}
 
-	public void setGenero(Byte genero) {
-		this.genero = genero;
+	public void setTelefonoPaciente(Long telefonoPaciente) {
+		this.telefonoPaciente = telefonoPaciente;
 	}
 
-	public Long getEdad() {
-		return edad;
+	public String getEmailPaciente() {
+		return emailPaciente;
 	}
 
-	public void setEdad(Long edad) {
-		this.edad = edad;
+	public void setEmailPaciente(String emailPaciente) {
+		this.emailPaciente = emailPaciente;
 	}
 
-	public Long getTelefono() {
-		return telefono;
+	public String getFechaNacimientoPaciente() {
+		return fechaNacimientoPaciente;
 	}
 
-	public void setTelefono(Long telefono) {
-		this.telefono = telefono;
+	public void setFechaNacimientoPaciente(String fechaNacimientoPaciente) {
+		this.fechaNacimientoPaciente = fechaNacimientoPaciente;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public String getGeneroPaciente() {
+		return generoPaciente;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setGeneroPaciente(String generoPaciente) {
+		this.generoPaciente = generoPaciente;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public String getCiudadResidenciaPaciente() {
+		return ciudadResidenciaPaciente;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setCiudadResidenciaPaciente(String ciudadResidenciaPaciente) {
+		this.ciudadResidenciaPaciente = ciudadResidenciaPaciente;
+	}
+
+	public String getDireccionResidenciaPaciente() {
+		return direccionResidenciaPaciente;
+	}
+
+	public void setDireccionResidenciaPaciente(String direccionResidenciaPaciente) {
+		this.direccionResidenciaPaciente = direccionResidenciaPaciente;
+	}
+
+	public Long getCodigoAfiliacionPaciente() {
+		return codigoAfiliacionPaciente;
+	}
+
+	public void setCodigoAfiliacionPaciente(Long codigoAfiliacionPaciente) {
+		this.codigoAfiliacionPaciente = codigoAfiliacionPaciente;
+	}
+
+	public String getUsuarioPaciente() {
+		return usuarioPaciente;
+	}
+
+	public void setUsuarioPaciente(String usuarioPaciente) {
+		this.usuarioPaciente = usuarioPaciente;
+	}
+
+	public String getContraseñaPaciente() {
+		return contraseñaPaciente;
+	}
+
+	public void setContraseñaPaciente(String contraseñaPaciente) {
+		this.contraseñaPaciente = contraseñaPaciente;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(correo, edad, genero, id, nombres, primerApellido, segundoApellido, telefono, usuario);
+		return Objects.hash(apellidoMaternoPaciente, apellidoPaternoPaciente, ciudadResidenciaPaciente,
+				codigoAfiliacionPaciente, contraseñaPaciente, direccionResidenciaPaciente, emailPaciente,
+				fechaNacimientoPaciente, generoPaciente, id, nombrePaciente, telefonoPaciente, usuarioPaciente);
 	}
 
 	@Override
@@ -118,17 +167,28 @@ public class Paciente {
 		if (getClass() != obj.getClass())
 			return false;
 		Paciente other = (Paciente) obj;
-		return Objects.equals(correo, other.correo) && Objects.equals(edad, other.edad)
-				&& Objects.equals(genero, other.genero) && Objects.equals(id, other.id)
-				&& Objects.equals(nombres, other.nombres) && Objects.equals(primerApellido, other.primerApellido)
-				&& Objects.equals(segundoApellido, other.segundoApellido) && Objects.equals(telefono, other.telefono)
-				&& Objects.equals(usuario, other.usuario);
+		return Objects.equals(apellidoMaternoPaciente, other.apellidoMaternoPaciente)
+				&& Objects.equals(apellidoPaternoPaciente, other.apellidoPaternoPaciente)
+				&& Objects.equals(ciudadResidenciaPaciente, other.ciudadResidenciaPaciente)
+				&& Objects.equals(codigoAfiliacionPaciente, other.codigoAfiliacionPaciente)
+				&& Objects.equals(contraseñaPaciente, other.contraseñaPaciente)
+				&& Objects.equals(direccionResidenciaPaciente, other.direccionResidenciaPaciente)
+				&& Objects.equals(emailPaciente, other.emailPaciente)
+				&& Objects.equals(fechaNacimientoPaciente, other.fechaNacimientoPaciente)
+				&& Objects.equals(generoPaciente, other.generoPaciente) && Objects.equals(id, other.id)
+				&& Objects.equals(nombrePaciente, other.nombrePaciente)
+				&& Objects.equals(telefonoPaciente, other.telefonoPaciente)
+				&& Objects.equals(usuarioPaciente, other.usuarioPaciente);
 	}
 
 	@Override
 	public String toString() {
-		return "Paciente [id=" + id + ", nombres=" + nombres + ", primerApellido=" + primerApellido
-				+ ", segundoApellido=" + segundoApellido + ", genero=" + genero + ", edad=" + edad + ", telefono="
-				+ telefono + ", correo=" + correo + ", usuario=" + usuario + "]";
+		return "Paciente [id=" + id + ", nombrePaciente=" + nombrePaciente + ", apellidoPaternoPaciente="
+				+ apellidoPaternoPaciente + ", apellidoMaternoPaciente=" + apellidoMaternoPaciente
+				+ ", telefonoPaciente=" + telefonoPaciente + ", emailPaciente=" + emailPaciente
+				+ ", fechaNacimientoPaciente=" + fechaNacimientoPaciente + ", generoPaciente=" + generoPaciente
+				+ ", ciudadResidenciaPaciente=" + ciudadResidenciaPaciente + ", direccionResidenciaPaciente="
+				+ direccionResidenciaPaciente + ", codigoAfiliacionPaciente=" + codigoAfiliacionPaciente
+				+ ", usuarioPaciente=" + usuarioPaciente + ", contraseñaPaciente=" + contraseñaPaciente + "]";
 	}
 }
