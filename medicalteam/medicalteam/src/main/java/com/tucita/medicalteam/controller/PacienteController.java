@@ -30,7 +30,7 @@ public class PacienteController {
 		return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/d/{id}")
 	public ResponseEntity<?> ConsultarPorID(@PathVariable Long id){
 		Optional<Paciente> paciente = servicio.consultarPaciente(id, null);
 		if(paciente.isPresent()) {
@@ -43,7 +43,7 @@ public class PacienteController {
 	public ResponseEntity<?> crearPaciente(@RequestBody Paciente paciente){
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicio.crearPaciente(paciente));
 	}
-	@PutMapping("/{id}")
+	@PutMapping("/d/{id}")
 	public ResponseEntity<?> actualizarPaciente(@RequestBody Paciente paciente,@PathVariable Long id){
 		Optional<Paciente> pacienteConsultado = servicio.consultarPaciente(id, null);
 		if(pacienteConsultado.isPresent()) {
@@ -61,7 +61,7 @@ public class PacienteController {
 		return null;
 	
 	}
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/d/{id}")
 	public ResponseEntity<?> eliminarPacientePorId(@PathVariable Long id){
 		servicio.eliminarPaciente(id);
 		

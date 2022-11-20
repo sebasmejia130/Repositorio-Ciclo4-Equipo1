@@ -31,7 +31,7 @@ public class OrdenesRemisionesController {
 		return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/d/{id}")
 	public ResponseEntity<?> ConsultarPorID(@PathVariable Long id){
 		Optional<OrdenesRemisiones> orden = servicio.consultarOrden(id, null);
 		if(orden.isPresent()) {
@@ -44,7 +44,7 @@ public class OrdenesRemisionesController {
 	public ResponseEntity<?> crearOrden(@RequestBody OrdenesRemisiones ordenesRemisiones){
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicio.crearOrden(ordenesRemisiones));
 	}
-	@PutMapping("/{id}")
+	@PutMapping("/d/{id}")
 	public ResponseEntity<?> actualizarOrden(@RequestBody OrdenesRemisiones ordenesRemisiones,@PathVariable Long id){
 		Optional<OrdenesRemisiones> ordenConsultada = servicio.consultarOrden(id, null);
 		if(ordenConsultada.isPresent()) {
@@ -62,7 +62,7 @@ public class OrdenesRemisionesController {
 		return null;
 	
 	}
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/d/{id}")
 	public ResponseEntity<?> eliminarOrdenPorId(@PathVariable Long id){
 		servicio.eliminarOrden(id);
 		

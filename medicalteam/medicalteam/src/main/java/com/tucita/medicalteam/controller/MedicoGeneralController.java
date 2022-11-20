@@ -19,7 +19,7 @@ import com.tucita.medicalteam.model.MedicoGeneral;
 import com.tucita.medicalteam.service.MedicoGeneralService;
 
 @RestController
-@RequestMapping("/api/medicos")
+@RequestMapping("/api/medico")
 public class MedicoGeneralController {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class MedicoGeneralController {
 		return ResponseEntity.status(HttpStatus.OK).body(servicio.consultarLista());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/d/{id}")
 	public ResponseEntity<?> ConsultarPorID(@PathVariable Long id){
 		Optional<MedicoGeneral> medico = servicio.consultarMedicoGeneral(id, null);
 		if(medico.isPresent()) {
@@ -43,7 +43,7 @@ public class MedicoGeneralController {
 	public ResponseEntity<?> crear(@RequestBody MedicoGeneral medicoGeneral){
 		return ResponseEntity.status(HttpStatus.CREATED).body(servicio.crearMedico(medicoGeneral));
 	}
-	@PutMapping("/{id}")
+	@PutMapping("/d/{id}")
 	public ResponseEntity<?> actualizarMedico(@RequestBody MedicoGeneral medicoGeneral,@PathVariable Long id){
 		Optional<MedicoGeneral> medicoConsultado = servicio.consultarMedicoGeneral(id, null);
 		if(medicoConsultado.isPresent()) {
@@ -61,7 +61,7 @@ public class MedicoGeneralController {
 		return null;
 	
 	}
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/d/{id}")
 	public ResponseEntity<?> eliminarMedicoPorId(@PathVariable Long id){
 		servicio.eliminarMedicoGeneral(id);
 		

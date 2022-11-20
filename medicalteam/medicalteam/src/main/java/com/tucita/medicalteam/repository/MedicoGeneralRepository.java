@@ -11,7 +11,7 @@ import com.tucita.medicalteam.model.MedicoGeneral;
 @Repository
 public interface MedicoGeneralRepository extends MongoRepository<MedicoGeneral, Long> {
 	
-	@Query("nombreMedico:'?0'}")
+	@Query("{nombreMedico:?0}")
     List<MedicoGeneral> findByNombre(String nombreMedico);
 	
 

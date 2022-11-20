@@ -12,7 +12,7 @@ import com.tucita.medicalteam.model.OrdenesRemisiones;
 @Repository 
 public interface OrdenesRemisionesRepository extends MongoRepository<OrdenesRemisiones, Long>{
 	
-	@Query("tipoExamen:'?0'}")
+	@Query("{tipoExamen:'?0'}")
     List<OrdenesRemisiones> findByTipoExamen(String tipoExamen);
 
 }

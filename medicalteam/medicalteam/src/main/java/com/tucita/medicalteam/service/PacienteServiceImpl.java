@@ -30,10 +30,10 @@ public class PacienteServiceImpl implements PacienteService {
 		if(pacienteACrear.isPresent()) {
 			return null;
 		}
-		List<Paciente> pacientes = repositorio.findByNombre(paciente.getNombrePaciente());
+		/*List<Paciente> pacientes = repositorio.findByNombre(paciente.getNombrePaciente());
 		if(pacientes.size() > 0) {
 			return pacientes.get(0);
-		}
+		}*/
 		return repositorio.insert(paciente);
 	}
 
